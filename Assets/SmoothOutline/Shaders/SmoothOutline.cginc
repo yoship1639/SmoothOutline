@@ -109,18 +109,18 @@ fixed4 frag(v2f i) : SV_Target
     UNITY_LIGHT_ATTENUATION(atten, i, 0)
     NL = NL * (1.0 - _Ambient.rgb) + _Ambient.rgb;
     atten = atten * (1.0 - _Ambient.rgb) + _Ambient.rgb;
+
+    half3 V = normalize(_WorldSpaceCameraPos -i.worldPos.xyz);
+    half3 specular = pow(max(0.0, dot(reflect(-L, N), V)), _Shininess) * _SpecularIntensity * _LightColor0.rgb;
 #else
     UNITY_LIGHT_ATTENUATION(atten, i, i.worldPos.xyz)
+    half3 specular = 0;
 #endif
 
     half nl = min(NL, atten);
 
     col.rgb *= nl * _LightColor0.rgb;
-    col.rgb += i.ambient;
-
-    half3 V = normalize(_WorldSpaceCameraPos -i.worldPos.xyz);
-    half3 specular = pow(max(0.0, dot(reflect(-L, N), V)), _Shininess) * _SpecularIntensity * _LightColor0.rgb;
-    col.rgb += specular;
+    col.rgb += i.ambient + specular;
 #endif
 
     col.rgb += _Emission.rgb;
