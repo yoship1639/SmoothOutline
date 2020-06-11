@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SmoothOutline
-  m_Shader: {fileID: 4800000, guid: acd82366cb0167d479eab67a5c039307, type: 3}
+  m_Shader: {fileID: 4800000, guid: b85f50ca1115aa542bd2cffdd11dbc57, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -57,6 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Distance_Width: 0
+    - _Ambient: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -69,13 +70,17 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineWidth: 3
     - _Parallax: 0.02
+    - _Shininess: 8
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpecularIntensity: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _UseDistanceWidth: 0
     - _ZWrite: 1
     m_Colors:
+    - _Ambient: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
