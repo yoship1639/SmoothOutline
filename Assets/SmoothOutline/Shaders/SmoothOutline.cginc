@@ -115,6 +115,7 @@ fixed4 frag(v2f i) : SV_Target
 #else
     UNITY_LIGHT_ATTENUATION(atten, i, i.worldPos.xyz)
     half3 specular = 0;
+    if (edge > 0) discard;
 #endif
 
     half nl = min(NL, atten);
